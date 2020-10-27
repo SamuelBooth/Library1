@@ -11,13 +11,20 @@ function calculateLateFeeCost() {
     //convert to a number
     var amountOfLateDvds = parseInt(amountOfLateDvds);
 
+    var amountOfDaysLate = prompt("How many days are your books and Dvd's late?")
+
+    var amountOfDaysLate =parseInt(amountOfDaysLate);
+
+
     //get the late fee cost of a book
-    var lateFeePerBook = 0.25;a
+    var lateFeePerBook = 0.25;
 
 
 
     //get the late fee cost of a dvd
     var lateFeePerDvd = 0.50;
+
+    var lateFeePerDay = 0.75;
 
 
 
@@ -27,8 +34,11 @@ function calculateLateFeeCost() {
     // find total gas cost by total gallons * $/gallon
     var totalDvdFeeCost = amountOfLateDvds * lateFeePerDvd;
 
-    //find total hours by dividing miles by MPH
-    var totalLateFeeCostDisplay = totalBookFeeCost + totalDvdFeeCost;
+    var totalDaysFeeCost = totalBookFeeCost + totalDvdFeeCost * lateFeePerDay
+
+    var totalLateFeeCostDisplay = totalBookFeeCost + totalDvdFeeCost + lateFeePerDay;
+
+
 
 
     // output total fee cost
