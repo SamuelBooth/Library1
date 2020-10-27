@@ -12,7 +12,7 @@ function calculateLateFeeCost() {
     var amountOfLateDvds = parseInt(amountOfLateDvds);
 
     //get the late fee cost of a book
-    var lateFeePerBook = 0.25;
+    var lateFeePerBook = 0.25;a
 
 
 
