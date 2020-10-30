@@ -1,48 +1,46 @@
-function calculateLateFeeCost() {
-    //How many late books do you have?
-    var amountOfLateBooks = prompt("How many late books do you have?");
-
-    //convert to a number
-    var amountOfLateBooks = parseInt(amountOfLateBooks);
-
-    //How many Late DVDs do you have?
-    var amountOfLateDvds = prompt("How many late Dvd's do you have?");
-
-    //convert to a number
-    var amountOfLateDvds = parseInt(amountOfLateDvds);
-
-    var amountOfDaysLate = prompt("How many days are your books and Dvd's late?")
-
-    var amountOfDaysLate =parseInt(amountOfDaysLate);
-
-
-    //get the late fee cost of a book
-    var lateFeePerBook = 0.25;
 
 
 
-    //get the late fee cost of a dvd
-    var lateFeePerDvd = 0.50;
+$(document).ready(
+    function () {
+        $("#lateFeeButton").click(calcFee());
+        $("#priceButton").click(showPopup);
 
 
+        function calcFee()
+        {
+            var numberOfLateBooks = $("#numberOfLateBooks").val();
+            numberOfLateBooks = parseFloat(numberOfLateBooks);
 
+            var numberOfLateDvds = $("#numberOfLateDvds").val();
+            numberOfLateDvds = parseFloat(numberOfLateDvds);
 
+            var numberOfDaysLate = $("#numberOfDaysLate").val();
+            numberOfDaysLate= parseInt(numberOfDaysLate);
 
-    //find total gallons by dividing miles by MPG
-    var totalBookFeeCost = amountOfLateBooks * lateFeePerBook * amountOfDaysLate ;
+            var costPerLateBook = 0.25;
 
-    // find total gas cost by total gallons * $/gallon
-    var totalDvdFeeCost = amountOfLateDvds * lateFeePerDvd * amountOfDaysLate;
+            var costPerLateDvd = 0.75;
 
+            var totalCostPerDay = 1.00;
 
-    var totalLateFeeCostDisplay = totalBookFeeCost + totalDvdFeeCost;
+            var totalLateFeeCostPerDay= costPerLateBook * costPerLateDvd * totalCostPerDay;
+
+            var TotalFee = totalLateFeeCostPerDay * numberOfLateBooks + numberOfLateDvds;
 
 
 
 
-    // output total fee cost
 
-    alert(`Your total late fee is $${totalLateFeeCostDisplay} for late books and dvd's.`);
+            $("#lateFeeOutput").text(TotalFee.toFixed(2));
+
+            $(".output").show();
+        }
 
 
-}
+
+
+    }
+);
+
+

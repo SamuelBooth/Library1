@@ -3,11 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <title>Library Late Fee Cost Calculator</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+            integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     <script src="code.js"></script>
+
 </head>
 <body>
-<h1>Library Late Fee Cost Calculator For Books and Dvd's</h1>
-<button onclick="calculateLateFeeCost()">Calculate late Fee Cost </button>
+<h1>Library Late Fee Cost Calculator For Books and Dvd's </h1>
+
+<label for="numberOfLateBooks">Number of Late Books</label>
+<input type = "number" id="numberOfLateBooks">
+<br>
+<label for="numberOfDvdLate">Number of Late Dvd's</label>
+<input type = "number" id="numberOfDvdLate">
+<br>
+<label for="numberOfDaysLate">Number of Days Late</label>
+<input type = "number" id="numberOfDaysLate">
+<br>
+<button id ="lateFeeButton">Show Late Fee Cost</button>
+<br>
+
+
+<p class="LateFeeButton">Your Late Fee Will Cost <span id ="priceOutput"></span></p>
+<br>
+
+
+</body>
+
 
 </body>
 </html>
+
